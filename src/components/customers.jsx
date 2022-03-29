@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container, Row, Image } from 'react-bootstrap';
 import Image3 from '../assets/image3.png'
 import Image4 from '../assets/image4.png'
 import Image5 from '../assets/image5.png'
 
 const Customers = () => {
-    const [customers, setCustomers] = useState(JSON.parse(localStorage.getItem("customers")));
+    if(JSON.parse(localStorage.getItem("customers"))){
+        var customers = JSON.parse(localStorage.getItem("customers"));
+    } else{
+        var customers = [];
+    }
+    
   return (
     <div>
         <Container className="pt-5">
